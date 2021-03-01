@@ -8,7 +8,7 @@ public class testclass {
 		for (int i = 0; i < n; i++) {
 
 			arr[i] = 25 + i;
-			int index = i + 1;
+			int index = i;
 			System.out.println("Your index is " + index + ". " + "It's value is " + arr[i]);
 
 		}
@@ -20,13 +20,12 @@ public class testclass {
 		int n = arr.length;
 
 		for (int i = 0; i < n; i++) {
-			int index = i + 1;
 
 			if (arr[i] == number)
-				System.out.println("You're number is at position " + index);
-			return i;
+				return i;
 		}
 
+		System.out.println("Could not find your number");
 		return -1;
 
 	}
@@ -35,8 +34,12 @@ public class testclass {
 		int[] Array = new int[20];
 
 		addArray(Array);
-		linearSearch(Array, 25);
+		int result = linearSearch(Array, 43);
 
+		if (result == -1) {
+			System.out.println("You're number is not in the array");
+		} else
+			System.out.println("You're number is at position " + result);
 	}
 
 }
